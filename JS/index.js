@@ -1,27 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // getting elements from the DOM
+  // This is DOM manipulation 
   const moviesListContainer = document.querySelector("#moviesList");
   const movieDetailsContainer = document.querySelector("#movieDetails");
 
-  // getting films data
+  // Obtaining the film data. 
   fetch("https://flatdango.vercel.app/db.json")
     .then((res) => res.json())
     .then((data) => {
       displayMoviesList(data.films);
     });
 
-  //   displaying movies titles
+  //   Indicating the movie titles. 
   function displayMoviesList(data) {
     data.map((movie) => {
       const markUp = `<li class="list-group-item" id="movieList">${movie.title}</li>`;
 
-      // append movie titles
+      // appending the titles of the movie.
       moviesListContainer.insertAdjacentHTML("afterbegin", markUp);
 
-      // display the first movie details on the list on load of the page
+      // Showing the list of the movies on the user's landing page. 
       displayMovieDetails(movie);
 
-      // display movie details on click of the movie titles
+      // Indicating the details of the movie on the right panel. 
       const movieList = document.querySelector("#movieList");
       movieList.addEventListener("click", () => {
         displayMovieDetails(movie);
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Display movie details
+  // Showing the details of the movie.
   function displayMovieDetails(movie) {
     const markUp = `<img src="${movie.poster}" alt="">
   <div>
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Buy ticket
+  // To purchase the ticket 
   function buyTicket(movie) {
     const ticketsSold = document.querySelector("#ticketssold");
     let remainingTickets = movie.capacity - movie.tickets_sold;
