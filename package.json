@@ -1,17 +1,17 @@
 {
   "name": "week-3-code-challenge",
   "version": "1.0.0",
-  "description": "flatdango cinema",
+  "description": "movie",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "start"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BrianWahungu/week-3-code-challenge.git"
   },
   "keywords": [
-    "flatdango"
+    "movie"
   ],
   "author": "brian wahungu",
   "license": "ISC",
